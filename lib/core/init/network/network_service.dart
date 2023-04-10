@@ -1,7 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:weather_mate/core/models/weather_model.dart';
-
 import '../../base/base_model.dart';
 import '../../base/request_validator.dart';
 import '../../constant/app_constants.dart';
@@ -32,18 +30,18 @@ class NetworkService {
       bool? justDecode = false}) async {
     try {
       body = body ?? {};
-      var _response = await _dio.request(endPoint,
+      var response = await _dio.request(endPoint,
           options: Options(method: type!.name), data: body, queryParameters: queries);
 
-      debugPrint(' ==== $endPoint === $body === ${_response.data}');
-      if (_response.statusCode==200) {
+      debugPrint(' ==== $endPoint === $body === ${response.data}');
+      if (response.statusCode == 200) {
         return ResponseModel<T>(
             status: ResponseStatusEnum.success,
             response: justDecode!
-                ? _response.data
-                : ((parseModel as BaseModel<T>).fromJson(_response.data)));
+                ? response.data
+                : ((parseModel as BaseModel<T>).fromJson(response.data)));
       } else {
-        String? errorMessage = _response.data['error_message'];
+        String? errorMessage = response.data['error_message'];
 
         if (errorMessage != null) {
           if (errorMessage.contains('Credentials invalid')) {}
@@ -53,11 +51,11 @@ class NetworkService {
         }
 
         RequestValidator.instance
-            .baseValidator(_response.data['error_message'] ?? '', validators: validators);
-        return ResponseModel(status: ResponseStatusEnum.info, error: _response.data.toString());
+            .baseValidator(response.data['error_message'] ?? '', validators: validators);
+        return ResponseModel(status: ResponseStatusEnum.info, error: response.data.toString());
       }
     } catch (e) {
-      debugPrint("val: " + e.toString());
+      debugPrint("val: $e");
       return ResponseModel(status: ResponseStatusEnum.error, error: 'Bir hata oluştu');
     }
   }
