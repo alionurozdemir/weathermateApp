@@ -1,4 +1,5 @@
 import 'package:weather_mate/core/constant/app_constants.dart';
+import 'package:weather_mate/core/constant/enum.dart';
 import 'package:weather_mate/core/init/network/network_service.dart';
 import 'package:weather_mate/core/models/weather_model.dart';
 

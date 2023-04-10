@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:weather_mate/core/constant/enum.dart';
 import '../../base/base_model.dart';
 import '../../base/request_validator.dart';
 import '../../constant/app_constants.dart';
@@ -70,31 +71,3 @@ class ResponseModel<T> {
 }
 
 enum ResponseStatusEnum { success, info, error }
-
-enum RequestType {
-  get,
-  post,
-  put,
-  delete,
-}
-
-// final baseUrl =
-//     'https://api.open-meteo.com/v1/forecast?latitude=41.01&longitude=28.95&hourly=temperature_2m';
-// final dio = Dio(BaseOptions(baseUrl: baseUrl));
-
-// Future getData(double latitude, double longitude) async {
-// //Queryparams
-// //DataGelmediğiDurumYok
-
-//   try {
-//     final response = await dio.get('https://api.open-meteo.com/v1/forecast',
-//         queryParameters: {"latitude": latitude, "longitude": longitude});
-
-//     Map<String, dynamic> res = response.data as Map<String, dynamic>;
-
-//     return WeaterModel.fromJson(res);
-//   } catch (e) {
-//     // ignore: avoid_print
-//     print('Error occurred: $e');
-//   }
-// }
