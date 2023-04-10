@@ -75,7 +75,7 @@ class _HomePageState extends State<HomePage> {
                         onPressed: () {
                           _getCurrentLocation();
                         },
-                        child: const Text("Access Your Location"),
+                        child: const Text("Find your location"),
                       ),
                       const SizedBox(
                         height: 10,
