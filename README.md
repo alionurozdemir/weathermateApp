@@ -1,6 +1,6 @@
 # 3D Extuder Calibration App
 
-![This is an image](https://www.alionurozdemir.com/wp-content/uploads/2023/01/extruder-magaza.png)
+![This is an image](https://github.com/alionurozdemir/weathermateApp/blob/main/assets/cover.png)
 
 Mobile application that allows 3D Printers to calculate the extruder flow value. Ensure that the surfaces of the models you print with 3D printers are of higher quality and smoother.
 
