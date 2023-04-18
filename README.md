@@ -2,7 +2,6 @@
 
 ![This is an image](https://github.com/alionurozdemir/weathermateApp/blob/main/assets/cover.png)
 
-Mobile application that allows 3D Printers to calculate the extruder flow value. Ensure that the surfaces of the models you print with 3D printers are of higher quality and smoother.
 
 - dio: ^5.1.1
 - geolocator: ^9.0.2
